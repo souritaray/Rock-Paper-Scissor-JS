@@ -5,7 +5,7 @@ const resultComp = document.querySelector("#result-comp-stat");
 const result = document.querySelector("#result-final-stat");
 const all=document.querySelector(".choices");
 const images = document.querySelectorAll(".choice");
-let f=0;
+
 const res=document.createElement("span");
 result.appendChild(res);
 const user = document.createElement("img");
@@ -14,8 +14,11 @@ resultUser.appendChild(user);
 const compChoice = document.createElement("img");
 compChoice.className = "compImg";
 resultComp.appendChild(compChoice);
+
+let f=0;
 let u=0;
 let c=0;
+
 images.forEach((e) => {  
   e.setAttribute("onclick", `theChoices(${e.id})`);
 });
@@ -51,9 +54,9 @@ function theChoices(e) {
     }
     else{
              isWinner(f,e);
-        }
-    
+        }  
 }
+
 function computerChoice(){
    let compChoiceImg= images[Math.floor(Math.random()*3)];
    return compChoiceImg;
